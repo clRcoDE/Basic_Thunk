@@ -5,7 +5,7 @@ import {getUsers,loadData} from '../Services/Actions/Action'
 class Main extends Component {
 
     changeStore=()=>{
-        console.warn(this.props)
+        // console.warn(this.props)
 this.props.dispatch(loadData())
     }
   render() {
@@ -14,7 +14,7 @@ this.props.dispatch(loadData())
 <TouchableHighlight onPress={this.changeStore.bind(this)}><Text>Press</Text></TouchableHighlight>
 
         {/* <Text>{this.props.names}</Text> */}
-        {this.props.names.map(item=><Text>{item}</Text>)}
+        {this.props.names.map((item,index)=><Text  key={index}>{item}</Text>)}
       </View>
     )
   }

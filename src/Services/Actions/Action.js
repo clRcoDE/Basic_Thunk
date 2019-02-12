@@ -12,7 +12,7 @@ export function loadData() {
     return dispatch => fetch(`https://randomuser.me/api/`) // Redux Thunk handles these
       .then(res => res.json())
       .then(
-        data => dispatch({ type: 'LOAD_DATA_SUCCESS', data:data.results[0].gender }),
+        data => dispatch({ type: 'LOAD_DATA_SUCCESS', data:data.results[0].name.first }),
         err => dispatch({ type: 'LOAD_DATA_FAILURE', err })
       );
   }

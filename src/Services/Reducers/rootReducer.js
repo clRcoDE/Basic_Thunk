@@ -8,7 +8,7 @@ export default rootReducer = (state = {names:['hey']}, action) => {
                 names:[...state.names,action.username]
             }
             case 'LOAD_DATA_SUCCESS':
-            console.log(action.data)
+            // console.log(action.data)
             return {
                 ...state,
                 names:[...state.names,action.data]
