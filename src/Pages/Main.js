@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
 import { Text, View , StyleSheet,TouchableHighlight} from 'react-native'
 import {connect} from 'react-redux'
-import {getUsers} from '../Services/Actions/Action'
+import {getUsers,loadData} from '../Services/Actions/Action'
 class Main extends Component {
 
     changeStore=()=>{
         console.warn(this.props)
-this.props.dispatch(getUsers())
+this.props.dispatch(loadData())
     }
   render() {
     return (
       <View>
-        <Text>{this.props.username}</Text>
 <TouchableHighlight onPress={this.changeStore.bind(this)}><Text>Press</Text></TouchableHighlight>
+
+        {/* <Text>{this.props.names}</Text> */}
+        {this.props.names.map(item=><Text>{item}</Text>)}
       </View>
     )
   }
